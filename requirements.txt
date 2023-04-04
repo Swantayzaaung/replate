@@ -1,0 +1,5 @@
+clarifai_grpc
+Django
+django-admin
+openai
+Pillow
