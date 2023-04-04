@@ -11,7 +11,8 @@ If that doesn't work properly, you may install each package individually
 pip install Django
 pip install django-admin
 pip install openai
-pip install Pillow```
+pip install Pillow
+```
 
 
 Once you have installed the necessary libraries, you may run the web application on your local computer by changing to the folder of the "replate" project and running:
