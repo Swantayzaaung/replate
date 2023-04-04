@@ -11,9 +11,9 @@ Replate is a responsive web application built in Django that allows users to sca
       <ul>
         <li><b>Web application</b>: Django Framework with Python</li>
         <li><b>Webpages</b>: HTML, CSS, Javascript</li>
-        <li><b>Image detection</b>: Clarifai API</li>
-        <li><b>Sending answers</b>: ChatGPI API</li>
-        <li><b>Drawing UI Design</b>: Figma</li>
+        <li><b>Image detection</b>: [Clarifai API](https://www.clarifai.com/)</li>
+        <li><b>Sending answers</b>: [ChatGPI API](https://openai.com/)</li>
+        <li><b>Drawing UI Design</b>: [Figma](https://figma.com)</li>
       </ul>
     </td>
     <td>
