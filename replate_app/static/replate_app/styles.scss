@@ -1,0 +1,265 @@
+// Color definitions
+$yellow: #feff89;
+$orange: #ee8e35;
+$red: #f85959;
+$darkred: #c1443c;
+$transition-speed: 600ms;
+:root {
+    font-size: 16px;
+}
+
+// Style for page-width lines
+hr {
+    border-color: $orange;
+    border-width: 2px;
+}
+
+// Styles for navbar designs
+.navbar {
+    background-color: $orange;
+    img {
+        width: 3em; 
+        margin-right: 1rem;
+    }
+    a { 
+        color: white !important;
+    }
+    .nav-item, .nav-item:hover {
+        transition: ease-in $transition-speed;
+    }
+    .nav-item {
+        margin: 0 1.5rem;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 100px;
+        padding: 0 1rem;
+    }
+    .nav-item:hover {
+        box-shadow: inset 0 0 100vw 100vw rgba(0, 0, 0, 0.1);
+    }
+}
+
+.navbar-toggler {
+    border: 3px #fff7 solid !important;
+}
+
+// Set body background color
+body {
+    background-color: #f5f5f5;
+}
+
+// Links
+a, a:hover {
+    color: $darkred;
+}
+
+// Button styles
+.btn, .btn-hover {
+    transition: ease-in $transition-speed;
+}
+.btn {
+    // border-radius: 50px;
+    padding: 0.5rem 1rem;
+    margin: auto;
+     
+    a {
+        text-decoration: none; 
+    }
+}
+.btn:hover{
+    box-shadow: inset 0 0 100vw 100vw rgba(255, 255, 255, 0.1);
+}
+
+// Colors for buttons
+// Orange
+.btn-orange, .btn-orange:hover, .btn-red, .btn-red:hover {
+    color: white;
+    a {
+        color: white;
+    }
+}
+.btn-orange {
+    background-color: $orange;
+}
+// Red
+.btn-red {
+    background-color: $red;
+}
+
+// Jumbotrons (hero block content)
+.jumbotron {
+    background-color: white;
+    img {
+        margin: auto;
+        border-radius: 50%;
+        border: 5px outset $darkred;
+    }
+}
+
+// Background box on scan page
+#upload {
+    background: url('/static/replate_app/veggies.jpg');
+    background-position: 0 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1rem;
+    height: 100%
+}
+
+// Add translucent dark background
+#upload-2 {
+    width: 100%;
+    background-color: #0009;
+    backdrop-filter: blur(10px);
+
+    ol {
+        text-indent: 0;
+    }
+}
+
+// For tab navigation in the scan page
+.nav-tabs {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    $tab-bg: #ee8e3527;
+    background-color: $tab-bg;
+
+    .nav-link:hover:not(.active) {
+        transition: ease-in $transition-speed;
+        box-shadow: inset 0 0 100vw 100vw rgba(255, 255, 255, 0.1);
+        border: $tab-bg solid 1px;
+    }
+
+    .nav-link {
+        background-color: #ee8e353a;
+        transition: ease-in $transition-speed;
+    }
+
+    .active {
+        background-color: $orange !important;
+        .icon-lg { color: white; }
+    }
+}
+
+// Change icon color in tabs
+.icon-lg {
+    font-size: 1.8rem;
+    color: $orange;
+    margin: 0 0.2rem;
+}
+
+// For text submit box
+#text-submit {
+    font-size: 12pt;
+    border-radius: 0;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+// Loading icon
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.loading {
+    width: 50px;
+    height: 50px;
+    border: 5px dotted $orange;
+    border-bottom: 0;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.loading-area {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// For file upload label
+.custom-file-label {
+    overflow: hidden;
+    text-align: left;
+}
+
+// Submit area margin 
+.submit-area, .loading-area {
+    margin-top: 1rem;
+    text-align: center;
+    justify-content: center;
+    .btn {
+        margin: 0 0.1rem;
+    }
+}
+
+// Outline for img
+.outline {
+    border: 5px $darkred;
+    border-style: inset;
+    margin: 1rem;
+    width: 70%;
+}
+
+// Img for result page
+.result-box {
+    max-height: 20rem;
+    overflow: scroll;
+    img {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+// Card colors for result page
+.card-header {
+    background-color: $orange;
+    .btn-link {
+        color: white;
+    }
+}
+
+// Footer styles
+footer {
+    background-color: lightgrey;
+    text-align: center;
+    font-size: large;
+    img {
+        max-width: 8rem;
+        margin: 0.5rem 1rem;
+    }
+}
+
+// About page profile box
+.aboutme {
+    font-size: large;
+}
+.about-icons {
+    font-size: larger;
+}
+
+// Change font for pre tag (I used them to preserve some tabs)
+pre {
+    font-family: sans-serif;
+}
+
+// For mobile devices
+@media screen and (max-width: 600px) {
+    :root {
+        font-size: 16px;
+    }
+    .outline {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}

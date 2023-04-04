@@ -1,0 +1,81 @@
+{% extends 'replate_app/layout.html' %}
+{% load static %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block body %}
+<a href="{% url 'scan' %}">
+    <button class="btn btn-orange">Return to previous page</button>
+</a>
+<hr>
+<!-- If the user input an image -->
+<div class="jumbotron container-fluid px-5 py-4">
+<h1>Results</h1>
+    <div class="row">
+        <!-- Display the uploaded image -->
+        {% if method == 'image' %}
+        <div class="col-sm-5 col-12 result-box p-3 border text-center">
+            <img src="{{ img_url }}" loading="lazy" alt="A picture of the scanned image">
+        </div>
+        <!-- Display the cards for the suggestion and tags -->
+        <div class="col-sm-7 col-12 result-box border p-1">
+        {% else %}
+        <div class="col-12 result-box border p-1">
+        {% endif %}
+            <!-- Accordion layout with collapse boxes -->
+            <div class="accordion" id="accordion">
+                <!-- For showing suggestions from ChatGPT AI -->
+                <div class="card">
+                    <div class="card-header" id="headingInfo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                data-target="#collapseInfo" aria-expanded="true" aria-controls="collapseInfo">
+                                Show suggestions
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseInfo" class="collapse show" aria-labelledby="headingInfo"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <h2>Suggestions</h2>
+                            <p>{{ suggestions | safe }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- For showing the tags in the food -->
+                {% if method == 'image' %}
+                <div class="card">
+                    <div class="card-header" id="headingTags">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                data-toggle="collapse" data-target="#collapseTags" aria-expanded="false"
+                                aria-controls="collapseTags">
+                                Show tags
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTags" class="collapse" aria-labelledby="headingTags" data-parent="#accordion">
+                        <div class="card-body">
+                            <h2>Food tags found</h2>
+                            <ol>
+                                {% for food in foodlist %}
+                                <li>{{ food.name }}, Probability: {{ food.value | floatformat:2 }}%</li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-muted text-center m-3">Image tags produced by Clarifai API</p>
+                {% else %}
+                <p class="text-muted text-center m-3">Food name entered: "{{ foodname }}"</p>
+                {% endif %}
+                <p class="text-muted text-center m-3">Answers provided by ChatGPT</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

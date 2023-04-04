@@ -1,0 +1,34 @@
+{% extends 'replate_app/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron container-fluid">
+    <div class="row align-items-center">
+        <img class="col-sm-3 col-6 p-2" src="{% static 'replate_app/logo-large.png' %}">
+        <div class="col-sm-9 col-12 p-4">
+            <h1>Welcome to Replate!</h1>
+            <p>For those of us who are too busy to look up ways to reuse some leftover food, Replate lets you find solutions at the tip of a finger. It allows anyone, anywhere, to capture or upload a picture of food, scan it and get suggestions on what to do with the food, helping reduce food waste on our planet.</p>
+            <button class="btn btn-orange"><a href="{% url 'scan' %}" class="d-flex justify-content-center">
+                Try Replate now!
+            </a></button>
+        </div>
+    </div>
+</div>
+<div class="jumbotron container-fluid">
+    <div class="row align-items-center">
+        <div class="col-sm-9 col-12 p-4">
+            <h1>Why is food waste such a big deal?</h1>
+            <p>
+                Ever wondered what happens to those bits of leftover rice that you threw away last night? Now imagine seven billion people doing the same...
+                <br>
+                Each year, 1.3 billion tons of food waste worth hundred billions of dollars is produced, and it has a colossal impact on both the environment and economy!
+            </p>
+        </div>
+        <img class="col-sm-3 col-6 p-2" src="{% static 'replate_app/onions.jpg' %}">
+    </div>
+</div>
+{% endblock %}

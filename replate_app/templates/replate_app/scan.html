@@ -1,0 +1,130 @@
+{% extends 'replate_app/layout.html' %}
+{% load static %}
+
+{% block title %}
+Scan
+{% endblock %}
+
+{% block body %}
+<h1>Scan leftovers</h1>
+<h4>And get tips on replating them!</h4>
+
+<!-- Div for uploading files -->
+<div class="jumbotron container-fluid" id="upload">
+    <div class="row align-items-center m-auto" id="upload-2">
+        <!-- Upload or Capture an image of food, or enter the name as a text -->
+        <div class="col-sm-6 col-12 p-3">
+            <!-- Tab layout to select the options -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <button id="cam-btn" data-toggle="tab" data-target="#cam-section"
+                        class="nav-link d-sm-block d-md-none">
+                        <i class="icon-lg fa-solid fa-camera"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="file-btn" data-toggle="tab" data-target="#file-section" class="nav-link">
+                        <i class="icon-lg fa-solid fa-file-arrow-up"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="text-btn" data-toggle="tab" data-target="#text-section" class="nav-link">
+                        <i class="icon-lg fa-solid fa-pen-to-square"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab content area -->
+            <div class="container-fluid tab-content border bg-white px-3 py-4">
+                <!-- For camera upload -->
+                <div class="file-upload tab-pane container d-sm-block d-md-none fade" id="cam-section">
+                    <form action="{% url 'scan' %}" method="post" class="form-group" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h2>Camera</h2>
+                        <!-- Upload area -->
+                        <div class="custom-file">
+                            <input type="hidden" name="method" value="image">
+                            <input type="file" name="file" class="custom-file-input" id="customFile" accept="image/*" capture="camera">
+                            <label class="custom-file-label" data-default="Take a photo" for="customFile">Take a photo</label>
+                        </div>
+                        <!-- Submit area -->
+                        <div class="submit-area">
+                            <button type="button" class="btn btn-red cancel-button">Cancel</button>
+                            <input type="submit" class="btn btn-orange submit-button" value="Submit">
+                        </div>
+                        <!-- Loading area -->
+                        <div class="loading-area">
+                            <div class="loading"></div>&nbsp;
+                            Loading
+                        </div>
+                    </form>
+                </div>
+
+                <!-- For file upload -->
+                <div class="file-upload tab-pane container fade" id="file-section">
+                    <form action="{% url 'scan' %}" class="form-group" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h2>Upload Image</h2>
+                        <!-- Upload area -->
+                        <div class="custom-file">
+                            <input type="hidden" name="method" value="image">
+                            <input name="file" type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" data-default="Upload" for="customFile">Upload</label>
+                        </div>
+                        <!-- Loading area -->
+                        <div class="submit-area">
+                            <button type="button" class="btn btn-red cancel-button">Cancel</button>
+                            <input type="submit" class="btn btn-orange submit-button" value="Submit">
+                        </div>
+                        <!-- Submit area -->
+                        <div class="loading-area">
+                            <div class="loading"></div>&nbsp;
+                            <!-- Loading -->
+                        </div>
+                    </form>
+                </div>
+
+                <!-- For text input -->
+                <div class="tab-pane container fade" id="text-section">
+                    <h2>Enter text</h2>
+                    <input type="hidden" name="method" value="text">
+                    <form action="{% url 'scan' %}" class="form-group" required method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label for="food-name">In case the image scanning isn't accurate or cannot detect leftover food in your image, you can simply type its name.</label>
+                        <div class="input-group mb-3">
+                            <input type="text" id="food-name" name="food-name" class="form-control" placeholder="Type the food name">
+                            <input type="hidden" name="method" value="text">
+                            <div class="input-group-append">
+                                <input type="submit" class="btn btn-orange" id="text-submit" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'replate_app/scan.js' %}"></script>
+
+        <!-- Instructions on what to do -->
+        <div class="text-white col-sm-6 col-12 p-5">
+            How to scan:
+            <ol>
+                <li>Take a picture of leftover food or select an existing one.</li>
+                <li>Click the upload button.</li>
+                <li>Wait for the results to come up.</li>
+                <li>If there are errors with the scanning process, you may use the text option to directly enter the
+                    name of the food you would like to ask for.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="row align-items-center m-auto">
+    <div class="col-12 col-sm-6 text-center">
+        <h2>Tip: Take food pictures close up, preferably on top view</h2>
+        <img class="outline" src="{% static 'replate_app/pizza-top.png' %}">
+    </div>
+    <div class="col-12 col-sm-6 text-center">
+        <h2>Don't take them at a side view or distance that's not clearly visible</h2>
+        <img class="outline" src="{% static 'replate_app/pizza-side.png' %}">
+    </div>
+</div>
+{% endblock %}

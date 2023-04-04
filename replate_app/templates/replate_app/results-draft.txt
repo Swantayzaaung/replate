@@ -1,0 +1,7 @@
+
+<h2>Suggestions for leftover {{ food_items }}</h2>
+{{ suggestions }}
+
+{% for food in foodlist %}
+<li>{{ food.name }}, Probability: {{ food.value }}</li>
+{% endfor %}

@@ -1,0 +1,236 @@
+:root {
+  font-size: 16px;
+}
+
+hr {
+  border-color: #ee8e35;
+  border-width: 2px;
+}
+
+.navbar {
+  background-color: #ee8e35;
+}
+.navbar img {
+  width: 3em;
+  margin-right: 1rem;
+}
+.navbar a {
+  color: white !important;
+}
+.navbar .nav-item, .navbar .nav-item:hover {
+  transition: ease-in 600ms;
+}
+.navbar .nav-item {
+  margin: 0 1.5rem;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 100px;
+  padding: 0 1rem;
+}
+.navbar .nav-item:hover {
+  box-shadow: inset 0 0 100vw 100vw rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler {
+  border: 3px rgba(255, 255, 255, 0.4666666667) solid !important;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+a, a:hover {
+  color: #c1443c;
+}
+
+.btn, .btn-hover {
+  transition: ease-in 600ms;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  margin: auto;
+}
+.btn a {
+  text-decoration: none;
+}
+
+.btn:hover {
+  box-shadow: inset 0 0 100vw 100vw rgba(255, 255, 255, 0.1);
+}
+
+.btn-orange, .btn-orange:hover, .btn-red, .btn-red:hover {
+  color: white;
+}
+.btn-orange a, .btn-orange:hover a, .btn-red a, .btn-red:hover a {
+  color: white;
+}
+
+.btn-orange {
+  background-color: #ee8e35;
+}
+
+.btn-red {
+  background-color: #f85959;
+}
+
+.jumbotron {
+  background-color: white;
+}
+.jumbotron img {
+  margin: auto;
+  border-radius: 50%;
+  border: 5px outset #c1443c;
+}
+
+#upload {
+  background: url("/static/replate_app/veggies.jpg");
+  background-position: 0 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  height: 100%;
+}
+
+#upload-2 {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+#upload-2 ol {
+  text-indent: 0;
+}
+
+.nav-tabs {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: rgba(238, 142, 53, 0.1529411765);
+}
+.nav-tabs .nav-link:hover:not(.active) {
+  transition: ease-in 600ms;
+  box-shadow: inset 0 0 100vw 100vw rgba(255, 255, 255, 0.1);
+  border: rgba(238, 142, 53, 0.1529411765) solid 1px;
+}
+.nav-tabs .nav-link {
+  background-color: rgba(238, 142, 53, 0.2274509804);
+  transition: ease-in 600ms;
+}
+.nav-tabs .active {
+  background-color: #ee8e35 !important;
+}
+.nav-tabs .active .icon-lg {
+  color: white;
+}
+
+.icon-lg {
+  font-size: 1.8rem;
+  color: #ee8e35;
+  margin: 0 0.2rem;
+}
+
+#text-submit {
+  font-size: 12pt;
+  border-radius: 0;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+.loading {
+  width: 50px;
+  height: 50px;
+  border: 5px dotted #ee8e35;
+  border-bottom: 0;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.loading-area {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-file-label {
+  overflow: hidden;
+  text-align: left;
+}
+
+.submit-area, .loading-area {
+  margin-top: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+.submit-area .btn, .loading-area .btn {
+  margin: 0 0.1rem;
+}
+
+.outline {
+  border: 5px #c1443c;
+  border-style: inset;
+  margin: 1rem;
+  width: 70%;
+}
+
+.result-box {
+  max-height: 20rem;
+  overflow: scroll;
+}
+.result-box img {
+  width: 100%;
+  border-radius: 0;
+}
+
+.card-header {
+  background-color: #ee8e35;
+}
+.card-header .btn-link {
+  color: white;
+}
+
+footer {
+  background-color: lightgrey;
+  text-align: center;
+  font-size: large;
+}
+footer img {
+  max-width: 8rem;
+  margin: 0.5rem 1rem;
+}
+
+.aboutme {
+  font-size: large;
+}
+
+.about-icons {
+  font-size: larger;
+}
+
+pre {
+  font-family: sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 16px;
+  }
+  .outline {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

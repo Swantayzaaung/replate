@@ -1,0 +1,93 @@
+{% extends 'replate_app/layout.html' %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block body %}
+<!-- Info on the project -->
+<div class="jumbotron py-5">
+    <h1>About this project</h1>
+    <hr>
+    <h4>The problem</h4>
+    <p>In our daily lives, we often tend to throw away food that have been left over from the previous days, without
+        noticing the sort of consequences that it could have for our environment. Well, it's quite simple, though, isn't
+        it?
+        We tend to not see something as dirty or polluting anymore when it's out of our sign.
+    </p>
+    <p>However, if we look at it from a global perspective, there's billions of households throwing away leftovers that
+        keep
+        stacking up in landfills; the damage to the land is massive, and lots of money is wasted on both food and
+        expanding
+        the landfills.</p>
+    <h4>My solution</h4>
+    <p>As a result, I decided to create Replate, a simple yet solid solution as a way to cut down food waste at an
+        individual level. By allowing users to scan their food via camera, or input the name as text, it sends the
+        information to ChatGPT and lets them get suggestions on what to do with their leftover food, rather than spend
+        time search various ways for each food item.</p>
+</div>
+
+<!-- Info on the tools used -->
+<div class="jumbotron py-5">
+    <h1>Technical information</h1>
+    <hr>
+    <div class="row">
+        <div class="col-12 col-sm-6 p-3">
+            <h2>Tools used</h2>
+            <ul>
+                <li><b>Web application</b>: Django Framework with Python</li>
+                <li><b>Webpages</b>: HTML, CSS, Javascript</li>
+                <li><b>Image detection</b>: Clarifai API</li>
+                <li><b>Sending answers</b>: ChatGPI API</li>
+                <li><b>Drawing UI Design</b>: Figma</li>
+            </ul>
+        </div>
+        <div class="col-12 col-sm-6 p-3">
+            <h2>How this project works</h2>
+            <ol>
+                <li>First, it asks the user to input a picture of food, or enter its name as text.</li>
+                <li>If it's an image, then the data is sent to Clarifai API to detect what food it contains. If it's text, then the text is uploaded directly.</li>
+                <li>The data for the food is then sent to ChatGPT's API to ask for suggestions on how to reuse the leftover food.</li>
+                <li>The suggestions from ChatGPT is output back to the user's browser.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron py-5">
+    <h1>Developer</h1>
+    <hr>
+    <div class="row align-items-center">
+        <div class="col-sm-6 col-12 text-center p-3">
+            <img src="{% static 'replate_app/swan.png' %}" class="outline" loading="lazy" alt="A picture of myself">
+        </div>
+        <div class="col-sm-6 col-12 p-3 aboutme">
+            <p>Hi! I'm Swan Tayza Aung from Myanmar, and I'm a student who has a burning passion for Programming and
+                Computer Science in general. I joined Code Olympiad as a way for me to bolster my coding skills and gain
+                experiences in making new projects. Just as I believe this project could help us towards leading
+                sustainable
+                lives, I'm certain that it has greatly helped me become a better programmer as well!</p>
+            <p>If you'd like to contact me, I'm available on these platforms:
+            <ul>
+                <li><i class="fa-brands fa-instagram about-icons"></i> <a
+                        href="https://www.instagram.com/oliver.swan.3/">oliver.swan.3</a></li>
+                <li><i class="fa-brands fa-facebook"></i> <a href="https://www.facebook.com/oliver.swan.319/">Swan Tayza
+                        Aung</a></li>
+                <li><i class="fa-brands fa-facebook-messenger"></i> Swan Tayza Aung</li>
+                <li><i class="fa-brands fa-discord"></i> swan#5865</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+</div>
+
+<h1>Image citations:</h1>
+<u>Home page</u>
+<p>Hamburg, L. (2015). two garlic in shallow focus photography photo. Unsplash.com. <a href="https://unsplash.com/photos/wj961KyCaNk">https://unsplash.com/photos/wj961KyCaNk</a></p>
+<u>Scan image</u>
+<p>Dumlao, N. (2020). sliced carrot and green vegetable photo. Unsplash.com. <a href="https://unsplash.com/photos/bRdRUUtbxO0">https://unsplash.com/photos/bRdRUUtbxO0</a></p>
+<u>Icons</u>
+<p>Free icons obtained from <a href="https://fontawesome.com/icons">Font Awesome</a></p>
+<p>The logo and other graphics have been created by myself in Kolourpaint</p>
+{% endblock %}
