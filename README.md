@@ -1,6 +1,32 @@
 # What is replate
 Replate is a responsive web application built in Django that allows users to scan their food via camera, or input the name as text. Then, it sends the information to ChatGPT and lets them get suggestions on what to do with their leftover food, rather than spend time search various ways for each food item. I believe that by creating this simple project, I could help reduce food waste on an individual level as people could more conveniently find out ways to reuse leftover food, which is often in perfectly good condition.
 
+<table>
+  <tr>
+    <th>How this web application works</th>
+    <th>How this project works</th>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li><b>Web application</b>: Django Framework with Python</li>
+        <li><b>Webpages</b>: HTML, CSS, Javascript</li>
+        <li><b>Image detection</b>: Clarifai API</li>
+        <li><b>Sending answers</b>: ChatGPI API</li>
+        <li><b>Drawing UI Design</b>: Figma</li>
+      </ul>
+    </td>
+    <td>
+      <ol>
+        <li>First, it asks the user to input a picture of food, or enter its name as text.</li>
+        <li>If it's an image, then the data is sent to Clarifai API to detect what food it contains. If it's text, then the text is uploaded directly.</li>
+        <li>The data for the food is then sent to ChatGPT's API to ask for suggestions on how to reuse the leftover food.</li>
+        <li>The suggestions from ChatGPT is output back to the user's browser.</li>
+      </ol>
+    </td>
+  </tr>
+</table>
+
 # How to run this web application
 As of now, due to time constraints, I haven't been able to deploy the web application on an Internet website. If I get the time, I will make sure to deploy it and share the URL here.
 
