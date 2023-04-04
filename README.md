@@ -3,11 +3,11 @@ Replate is a responsive web application built in Django that allows users to sca
 
 <table>
   <tr>
-    <th style="width: 50%">Tools used</th>
-    <th style="width: 50%">How this web app works</th>
+    <th>Tools used</th>
+    <th>How this web app works</th>
   </tr>
   <tr>
-    <td style="width: 50%">
+    <td>
       <ul>
         <li><b>Web application</b>: Django Framework with Python</li>
         <li><b>Webpages</b>: HTML, CSS, Javascript</li>
@@ -16,7 +16,7 @@ Replate is a responsive web application built in Django that allows users to sca
         <li><b>Drawing UI Design</b>: <a href="https://figma.com">Figma</a></li>
       </ul>
     </td>
-    <td style="width: 50%">
+    <td>
       <ol>
         <li>First, it asks the user to input a picture of food, or enter its name as text.</li>
         <li>If it's an image, then the data is sent to Clarifai API to detect what food it contains. If it's text, then the text is uploaded directly.</li>
