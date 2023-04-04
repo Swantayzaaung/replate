@@ -3,8 +3,8 @@ Replate is a responsive web application built in Django that allows users to sca
 
 <table>
   <tr>
-    <th>How this web application works</th>
-    <th>How this project works</th>
+    <th>Tools used</th>
+    <th>How this web app works</th>
   </tr>
   <tr>
     <td>
