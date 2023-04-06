@@ -11,12 +11,12 @@ def index(request):
     return render(request, "replate_app/index.html")
 
 # Function to compress a file
-def compress(img_path, filename): # Use an absolute path for image in here
+def compress(img_path): # Use an absolute path for image in here
     image = Image.open(img_path)
     image.save(img_path,
                "JPEG",
                optimize=True,
-               quality = 10)
+               quality = 90)
     return
 
 # For the scanning page
@@ -37,7 +37,7 @@ def scan(request):
                 is_img = True
                 try:
                     # Compress the image before saving
-                    compress(img_url, upload.name)
+                    compress(img_url)
                 except:
                     # If the program gives exception when it's not an image
                     foodlist = [{"name": "File is not an image", "value": 0}]
