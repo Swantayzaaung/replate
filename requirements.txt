@@ -1,5 +1,4 @@
-clarifai_grpc
-Django
-django-admin
-openai
-Pillow
+clarifai_grpc==9.2.0
+Django==4.1.4
+openai==0.27.2
+Pillow==9.5.0
