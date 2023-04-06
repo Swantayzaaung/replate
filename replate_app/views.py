@@ -16,7 +16,7 @@ def compress(img_path): # Use an absolute path for image in here
     image.save(img_path,
                "JPEG",
                optimize=True,
-               quality = 90)
+               quality = 10)
     return
 
 # For the scanning page
